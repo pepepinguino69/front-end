@@ -81,7 +81,6 @@ function recorrerListadoYRenderizarTarjetas() {
     nuevop2=document.createElement('p');
     nuevop2.setAttribute('id','p2')
     nuevop2.setAttribute('class','bimestre')
-
     nuevaimg=document.createElement('img')
     nuevaimg.setAttribute('height','100px')
     nuevaimg.setAttribute('src',element.imgUrl)
