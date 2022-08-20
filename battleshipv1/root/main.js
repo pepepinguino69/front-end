@@ -49,7 +49,6 @@ function checkWithinBoard(){if (verticalOrientation?increment=10:increment=1);
     let flag=false
     if (endPosition<100){flag=true}
     if (startPosition%10>endPosition%10){flag=false}
-    
     if(flag){for (i=startPosition;i<endPosition+1;i=i+increment){
     if (invalidPos.includes(i)){flag=false}
     }}
@@ -105,7 +104,7 @@ function cleanBoard(){for (i=0;i<shipPosition.length;i++){if(shipPosition[i].boa
     map1 = shipPosition[i].boardUse.map(x =>
     document.getElementById(x).setAttribute("class","box"))}}
 }
-function shootProcess(){let map1=[]
+function shootProcess(){let map1=[];
     prueba =unselectShips()
     prueba =cleanBoard()
     for(i=0;i<shipPosition.length;i++){document.querySelector("#ship"+i).classList.remove('hidden')}
@@ -165,7 +164,6 @@ for(j=0;j<ships.length;j++){
     shipContainer.classList.add("ship")
     shipContainer.setAttribute("id","ship"+j)
     document.getElementById("commandControl").appendChild(shipContainer);
-    
     for (i=0;i<ships[j];i++){
         shipBillboard=document.createElement("div")
         document.getElementById("ship"+j).appendChild(shipBillboard);
