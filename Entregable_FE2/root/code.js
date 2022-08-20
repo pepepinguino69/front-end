@@ -85,7 +85,8 @@ function recorrerListadoYRenderizarTarjetas() {
     nuevaimg=document.createElement('img')
     nuevaimg.setAttribute('height','100px')
     nuevaimg.setAttribute('src',element.imgUrl)
-    nuevaimg.setAttribute('alt',"imagen del lenguaje")
+    nuevaimg.setAttribute('alt',element.lenguajes)
+    nuevaimg.setAttribute('title',element.lenguajes)
     nuevoUso=document.getElementById('fila').appendChild(nuevoDiv)
     nuevoUsop2=nuevoUso.appendChild(nuevaimg).src=element.imgUrl
     nuevoUsop1=nuevoUso.appendChild(nuevop1).innerHTML=element.lenguajes
