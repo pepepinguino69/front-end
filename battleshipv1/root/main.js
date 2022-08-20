@@ -4,7 +4,11 @@ function onClick(){selectedCell = this.id;
     if(workflow){
     action=placeShip(selectedShip,selectedCell)}};
 function onClickShip(){selectedShip=this.id;
+    for(i=0;i<shipPosition.length;i++){document.getElementById("ship"+i).classList.remove("seleccionado")}
+    document.getElementById(selectedShip).classList.add("seleccionado")
     selectedShip=parseInt(selectedShip.substring(4));
+
+    document.getElementById(selectedShip).classList.add("seleccionado")
     if(shipPosition[selectedShip].isPlaced)
         {workflow=false}
     else
