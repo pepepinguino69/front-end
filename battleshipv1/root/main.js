@@ -10,24 +10,21 @@ function unselectShips(){
 }
 function onClickShip(){selectedShip=this.id;
     let prueba= unselectShips()
-    
-    
-    
     for(j=0;j<shipPosition[parseInt(selectedShip.substring(4))].size;j++)
         {document.getElementById("ship"+parseInt(selectedShip.substring(4))+"id"+j).classList.add("seleccionado");}
     selectedShip=parseInt(selectedShip.substring(4));
-
-    document.getElementById(selectedShip).classList.add("seleccionado")
     if(shipPosition[selectedShip].isPlaced)
         {workflow=false}
     else
-        ;workflow=true;return selectedShip};
+        {workflow=true;return selectedShip}}
+
 function placeShip(whatShip,gridLocation){
     workflow=false;   
-    shipPosition[whatShip]={"isPlaced":true,"verticalDirection":verticalOrientation,"Initial Position":gridLocation,"size":ships[whatShip]};
+    shipPosition[whatShip]={"isPlaced":true,"verticalDirection":verticalOrientation,"Initial Position":gridLocation,"size":ships[whatShip],"boardUse":[]};
     let auxZero="0";
     for(i=0;i<ships[whatShip];i++){  
         let shipPlacementSelector=document.getElementById(gridLocation)
+        shipPosition[whatShip].boardUse.push(gridLocation)
         if(verticalOrientation)
             {openRoundBox="openRoundBoxV";closeRoundBox="closeRoundBoxV"}
         else
@@ -39,14 +36,11 @@ function placeShip(whatShip,gridLocation){
         shipPlacementSelector.innerHTML=ships[whatShip];
         if (verticalOrientation){increment=10}else{increment=1}
         if(increment+parseInt(gridLocation.substring(2))>9){auxZero=""}
-        gridLocation='id'+auxZero+ (increment+parseInt(gridLocation.substring(2)))
-    }
-    let sendJson=true
+        gridLocation='id'+auxZero+ (increment+parseInt(gridLocation.substring(2)))}
+        let sendJson=true
     //for(r=0;r<5;r++){if(shipPosition[r].isPlaced==false){sendJson=false}}
     //if(sendJson){jSondata=
-
-document.getElementById("ship"+whatShip).classList.add("hidden")
-        
+        document.getElementById("ship"+whatShip).classList.add("hidden")     
     }
 
 function checkWithinBoard(){if (verticalOrientation?increment=10:increment=1);
@@ -100,78 +94,42 @@ function clientJson(){let xhr = new XMLHttpRequest();
     }
 function tryShoot(){
     const controlCenterContainer2=document.createElement("button")
-    
-    
-    
-    
-    
-    
-    
-
     controlCenterContainer2.onclick=shootProcess
-
     controlCenterContainer2.setAttribute("id","button2")
     buttonContainer2=mainContainer.classList.add("buttonPosition")
     document.getElementById("contenedor").appendChild(controlCenterContainer2).innerHTML="probar modo disparo"
-    
     document.getElementById("button2").onclick=shootProcess
-
-   
-   
-   
 }
 
-function shootProcess(){
+function cleanBoard(){for (i=0;i<shipPosition.length;i++){if(shipPosition[i].boardUse!=undefined){
+    map1 = shipPosition[i].boardUse.map(x =>
+    document.getElementById(x).setAttribute("class","box"))}}
+}
+function shootProcess(){let map1=[]
     prueba =unselectShips()
-    for (i=0;i<100;i++){
-if(i<10){zero="0"}else{zero=""}
-document.getElementById("id"+zero+i).classList.remove("idea");
-document.getElementById("id"+zero+i).classList.remove("openRoundBoxH");
-document.getElementById("id"+zero+i).classList.remove("openRoundBoxV");
-document.getElementById("id"+zero+i).classList.remove("closeRoundBoxH");
-document.getElementById("id"+zero+i).classList.remove("closeRoundBoxV");}
+    prueba =cleanBoard()
     for(i=0;i<shipPosition.length;i++){document.querySelector("#ship"+i).classList.remove('hidden')}
     document.getElementById("orientationMsg").innerHTML="Game Status";
     document.getElementById('button1').setAttribute("onclick",'')
-
-
-document.querySelector('#button1').classList.add('hidden');
-document.querySelector('#button2').classList.add('hidden');
-let unclickableDiv
-for (j=0;j<shipPosition.length;j++){
+    document.querySelector('#button1').classList.add('hidden');
+    document.querySelector('#button2').classList.add('hidden');
+    let unclickableDiv
+    for (j=0;j<shipPosition.length;j++){
     document.querySelector("#ship"+j).setAttribute("onclick",'')
     }
 
     selectedShot=this.id;for(i=0;i<100;i++){if(i<10?aux="0":aux="");
-        document.getElementById("id"+aux+i).onclick=shootProcess}
+    document.getElementById("id"+aux+i).onclick=shootProcess}
     if(selectedShot!='button2'){
-    selectedShot=selectedShot.substring(2);
-let random=Math.floor((Math.random())*100)
-document.getElementById("id"+selectedShot).classList.add("agua")
-if(random<17||parseInt(selectedShot)>90){let barco=Math.round(Math.random()*5);
-  
-    barcoPos=Math.floor(Math.random()*shipPosition[barco].size);
-   
-    document.getElementById("ship"+barco+"id"+barcoPos).classList.add("negro");
-    document.getElementById("ship"+barco+"id"+barcoPos).classList.remove("idea");
-}}}
-    
-    
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
+        selectedShot=selectedShot.substring(2);
+        let random=Math.floor((Math.random())*100)
+        document.getElementById("id"+selectedShot).classList.add("agua")
+        if(random<17||parseInt(selectedShot)>90){
+            let barco=Math.round(Math.random()*5);
+            barcoPos=Math.floor(Math.random()*shipPosition[barco].size);
+            document.getElementById("ship"+barco+"id"+barcoPos).classList.add("negro");
+            document.getElementById("ship"+barco+"id"+barcoPos).classList.remove("idea");
+        }}}
 shipPosition=[5]
 ships=[5,4,3,3,2]
 let workflow=false    
