@@ -95,7 +95,7 @@ function tryShoot(){
 
     controlCenterContainer2.setAttribute("id","button2")
     buttonContainer2=mainContainer.classList.add("buttonPosition")
-    document.getElementById("contenedor").appendChild(controlCenterContainer2).innerHTML="disparo"
+    document.getElementById("contenedor").appendChild(controlCenterContainer2).innerHTML="probar modo disparo"
     
     document.getElementById("button2").onclick=shootProcess
 
