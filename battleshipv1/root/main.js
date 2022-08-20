@@ -4,8 +4,11 @@ function onClick(){selectedCell = this.id;
     if(workflow){
     action=placeShip(selectedShip,selectedCell)}};
 function onClickShip(){selectedShip=this.id;
-    for(i=0;i<shipPosition.length;i++){document.getElementById("ship"+i).classList.remove("seleccionado")}
-    document.getElementById(selectedShip).classList.add("seleccionado")
+    for(i=0;i<shipPosition.length;i++){
+        for(j=0;j<shipPosition[i].size;j++)
+            {document.getElementById("ship"+i+"id"+j).classList.remove("seleccionado")}}
+    for(j=0;j<shipPosition[parseInt(selectedShip.substring(4))].size;j++)
+        {document.getElementById("ship"+parseInt(selectedShip.substring(4))+"id"+j).classList.add("seleccionado");}
     selectedShip=parseInt(selectedShip.substring(4));
 
     document.getElementById(selectedShip).classList.add("seleccionado")
@@ -91,6 +94,14 @@ function clientJson(){let xhr = new XMLHttpRequest();
     }
 function tryShoot(){
     const controlCenterContainer2=document.createElement("button")
+    
+    
+    
+    
+    
+    
+    
+
     controlCenterContainer2.onclick=shootProcess
 
     controlCenterContainer2.setAttribute("id","button2")
@@ -105,6 +116,14 @@ function tryShoot(){
 }
 
 function shootProcess(){
+//    for (i=0;i<100;i++)
+//if(i<10?zero="0":zero="")
+//alert("id"+zero+i)
+//{document.getElementById("id"+zero+i).classList.remove("idea");
+//document.getElementById("id"+zero+i).classList.remove("openRoundBoxH");
+//document.getElementById("id"+zero+i).classList.remove("openRoundBoxV");
+//document.getElementById("id"+zero+i).classList.remove("closeRoundBoxH");
+//document.getElementById("id"+zero+i).classList.remove("closeRoundBoxV");}
     for(i=0;i<shipPosition.length;i++){document.querySelector("#ship"+i).classList.remove('hidden')}
     document.getElementById("orientationMsg").innerHTML="Game Status";
     document.getElementById('button1').setAttribute("onclick",'')
