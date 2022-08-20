@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+        .flex{display: flex}
+        .between{justify-items: space-between;}
+        .jcenter{justify-content: center;}
+        .acenter{align-items: center;}
+        .column{flex-direction: column; margin: 0 auto;width:80%}
+        .around{justify-content: space-around;}
+        button{height:90px;width: 90px;display: flex;border-radius: 15px;justify-content: space-around;align-items: center;font-size: 250%;margin: 0px;padding: 0px;}
+        .calcDisplay{height: 90px;;
+                    width: 360px;
+                    border:1px black solid;
+                    background-color: gray;
+                    border-radius: 15px;font-size: 250%;display: flex;justify-content: flex-end;align-items: center;}
+        .calc{border: 5px black solid;border-radius: 15px;width: 364px;}
+
+
+.smallerFont{font-size: 100%;}
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+   <div class="flex jcenter acenter column calc">
+    <div id="display" class="calcDisplay">0</div>
+    <div class="flex around center"><button onclick="agregarString('1')">1</button><button onclick="agregarString('2')">2</button><button onclick="agregarString('3')">3</button><button onclick="agregarString('/')">/</button></div>
+    <div class="flex around center"><button onclick="agregarString('4')">4</button><button onclick="agregarString('5')">5</button><button onclick="agregarString('6')">6</button><button onclick="agregarString('*')">X</button></div>
+    <div class="flex around center"><button onclick="agregarString('7')">7</button><button onclick="agregarString('8')">8</button><button onclick="agregarString('9')">9</button><button onclick="agregarString('-')">-</button></div>
+    <div class="flex around center"><button onclick="agregarString('0')">0</button><button onclick="agregarString('.')">.</button><button onclick="agregarString('+')">+</button><button onclick="agregarString('equal')">=</button></div>
+    <div class="flex around center"><button onclick="agregarString('parOpen')">&#40</button><button onclick="agregarString('parClose')">&#41</button><button onclick="agregarString('C')">C</button><button onclick="agregarString('DEL')">del</button></div>
+    </div>
+
+   </div> 
+   <script src="main.js"></script>
+</body>
+</html>

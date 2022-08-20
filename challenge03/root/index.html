@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+<title>Frontend Mentor | Interactive rating component</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{padding: 0%;
+    margin: 0%;
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+}
+
+body{
+--Orange: hsl(25, 97%, 53%);
+--White: hsl(0, 0%, 100%);
+--LightGrey: hsl(217, 12%, 63%);
+--MediumGrey: hsl(216, 12%, 54%);
+--DarkBlue: hsl(213, 19%, 18%);
+--VeryDarkBlue: hsl(216, 12%, 8%);
+background-color: var(--VeryDarkBlue);
+}
+
+h2{text-align: left;
+  padding-bottom: 1rem;
+  
+  color:var(--White);
+  margin-left:5%;
+}
+
+
+p{font-size:15px;color: var(--LightGrey);margin:0% 5% 0%;text-align: left;line-height: 150%;font-size: .8;}
+
+ul{display:flex;margin:0 5%;
+  justify-content: space-around;
+  align-content: center;}
+
+li{list-style-type: none;}
+
+input[type="submit"]{
+  background-color: var(--Orange);
+  width:21rem;
+  height: 3rem;
+  border-radius: 25px;
+  color:var(--White);
+  font-size: 15px;
+  margin:2rem 0
+}
+
+input[type="submit"]:hover{
+  font-size: 150%;
+  cursor: pointer;}
+
+h3{color:var(--White);text-align: center;padding-bottom: 1rem;font-size: 150%;}
+
+.container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;}
+
+.pthank{text-align: center;}
+
+.round-container{background-color: var(--DarkBlue);
+  padding: 15px;
+  border-radius:50%}
+
+  .rate-now{
+    display: flex;
+  }
+  
+  .rate-now input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+  }
+  
+  .rate-now input[type="radio"]:checked+label,
+  .Checked+label {           
+    background-color: var(--White);
+    font-size: 150%;
+    color:var(--LightGrey)
+  }
+
+
+.rate-now label {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display:flex;
+  background-color: var(--DarkBlue);
+  color: var(--MediumGrey);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+  
+.rate-now label:hover {
+  background: var(--Orange);
+}
+
+.wrapper{width:40%;height:auto;margin-top:3rem}
+
+.flex{display: flex;justify-content:center;align-items: center;}
+
+
+.column{flex-direction: column;}
+.placement{display:flex;justify-content: left;align-content: center;margin:5%}
+.center{display:flex;justify-content: space-around;align-content: center;}
+#card,#card2{width: 375px;
+      height: 375px;
+      border:3px solid var(--DarkBlue);
+      border-radius:20px;
+      background-color:var(--VeryDarkBlue);
+    }
+    .margin10{margin: 1rem 0px;}
+    .marginleft{margin-left: 2rem;}
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .hidden{display:none}
+    .thankyou{display: flex;justify-content: center;align-items: space-around;flex-direction: column;}
+
+    .result{height:1.5rem;
+      background-color:var(--DarkBlue);
+      color:var(--Orange);
+      margin:1rem 0;
+      border-radius: 25px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      width:10rem;
+      font-size: 13px;
+    }
+    .col{color:aqua}
+    @media screen and (max-width:375px){.container{max-width:375px}
+      
+    }
+
+    
+  
+    
+  </style>
+</head>
+<body>
+
+  
+  <div class="container">
+    <!-- Rating state start -->
+    <div id="card">
+
+    <div class="placement"><img class="round-container" src="images/icon-star.svg"></div>
+    
+      <h2>How did we do?</h2>
+      <p>
+        Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!
+      </p>
+      <form onsubmit="return false;" method="post" name="myForm">
+        <ul class="rate-now">
+          <li>
+            <input type="radio" id="one" value="1" name="rating" />
+            <label for="one">1</label>
+          </li>
+          <li>
+            <input type="radio" id="two" value="2" name="rating" />
+            <label for="two">2</label>
+          </li>
+          <li>
+            <input type="radio" id="three" value="3" name="rating"/>
+            <label for="three">3</label>
+          </li>
+          <li>
+            <input type="radio" id="four" value="4" name="rating" />
+            <label for="four">4</label>
+          </li>
+          <li>
+            <input type="radio" id="five" value="5" name="rating" />
+            <label for="five">5</label>
+          </li>
+        </ul>
+        <div class="center">
+          <input type="submit" name="submit" value="SUBMIT" onclick="validate()"/>
+        </div>
+      </form>
+    </div>
+    <div id="card2" class="hidden">
+      <div class="flex">
+        <img class="wrapper" src="images/illustration-thank-you.svg">
+      </div>
+
+      <div class="flex margin10">
+        <div class="result" id="result"></div>
+      </div>
+      <h3>Thank you!</h3>
+      <p class="pthank">We appreciate you taking the time to give a rating. 
+        If you ever need more support, don’t hesitate to get in touch
+      </p>
+    </div>
+  </div>
+  <!-- Thank you state end -->
+  <script src="js/thankyou.js"></script>
+</body>
+</html>

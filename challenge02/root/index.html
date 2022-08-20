@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .flex{display:flex;justify-content: space-around;align-items:center}
+    :root{
+
+    --Darkcyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Verydarkblue: hsl(212, 21%, 14%);
+    --Darkgrayishblue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+  p{Font-size: 14px}
+  h1{font-family: 'Fraunces', serif;margin-left: 10%;margin-top:-8%;line-height: 2rem;}
+  body{
+      padding:0;
+      margin:0;
+      box-sizing: border-box;
+      ;
+      ;
+      background-color: var(--Cream);
+     }
+
+     button:hover{cursor:pointer;box-shadow: 4px 0 4px 0  black}
+    
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .card{display:flex;width:600px;border:1px solid var(--Cream);border-radius: 10px;}
+    .card1{justify-content:flex-end;}
+    .card2{justify-content: flex-start;width:100%;background-color: var(--White);border-bottom-right-radius: 10px;border-top-right-radius: 10px;}
+    .description{padding-right:22px;margin:2% 10%;font-family: 'Monserrat',sans-serif;;color:var(--Darkgrayishblue);font-size: 15px;line-height: 1.3rem;text-align: left;}
+    .wrapper{width:100%;border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
+    h4{margin:10%;padding-bottom: 1rem;
+      color:var(--Darkgrayishblue);font-weight: 100;font-size: 12px;letter-spacing: .4rem;
+      }
+    .cart{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--Darkcyan);
+      border-radius: 10px;
+      border:1px var(--Darkgrayishblue) solid;
+      padding:1rem;
+      width:15rem;
+      color:white
+    }
+    .column{flex-direction: column;}
+    .container{display:flex;justify-content: center;align-items: center;height:100vh}
+    
+    .price-container{display: flex;justify-content: space-around;align-items: center;}
+    .oldprice{text-decoration: line-through;color:var(--Darkgrayishblue)}
+    .price{color:var(--Darkcyan);font-family: 'Fraunces', serif;font-size: 200%;}
+    @media only screen and (max-width:375px){.card{flex-direction:column;max-width: 375px;};body{background-color: violet;}}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" 
+  rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card1">
+        <img class="wrapper" src="images/image-product-desktop.jpg" alt="">
+      </div>
+      <div class="card2 column">
+
+        <h4>PERFUME</h4>
+
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+
+        <p class="description">
+          A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+          Perfumer-Creator for the House of CHANEL.
+        </p>
+        
+        <div class="price-container"> 
+          <p class="price">
+          $149.99
+        </p>
+        <p class="oldprice">
+          $169.99
+        </p>
+
+      </div>
+        <div class="flex">
+          <button class="cart">
+            <img src="images/icon-cart.svg" />;
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Ariel Rubel</a>.
+  </div>
+</body>
+</html>

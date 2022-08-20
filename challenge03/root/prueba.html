@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{height:100vh;display:flex;justify-content: space-around;align-items: center;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form onsubmit="return false;" method="post" name="myForm">
+  
+        <ul class="rate-now">
+          <li>
+            <input type="radio" id="one" value="1" name="rating" />
+            <label for="one">1</label>
+          </li>
+          <li>
+            <input type="radio" id="two" value="2" name="rating" />
+            <label for="two">2</label>
+          </li>
+          <li>
+            <input type="radio" id="three" value="3" name="rating"/>
+            <label for="three">3</label>
+          </li>
+          <li>
+            <input type="radio" id="four" value="4" name="rating" />
+            <label for="four">4</label>
+          </li>
+          <li>
+            <input type="radio" id="five" value="5" name="rating" />
+            <label for="five">5</label>
+          </li>
+        </ul>
+        <div class="center">
+        <input type="submit" name="submit" value="SUBMIT" onclick="validate()"/>
+        <div id="result"></div>
+      
+        <script>
+            function validate() {
+                var ele = document.getElementsByName('rating');
+                  
+                for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked)
+                    alert(i)
+                    document.getElementById("result").innerHTML
+                            = "Gender: "+ele[i].value;
+                }
+            }
+        </script>
+
+</div>
+    </body>
+</html>

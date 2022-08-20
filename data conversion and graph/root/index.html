@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data analysis</title>
+    <style>
+        td{padding:16px;text-align: center;}
+        body{font-family: Arial, Helvetica, sans-serif;}
+        table{border-collapse: collapse;padding: 30px;
+        }
+        tr:nth-child(even){background:rgb(208, 15, 15);}
+        tr:nth-child(odd){background:rgb(147, 165, 25);}
+        tr:nth-child(1){background-color: blue;color: white;}
+        
+        
+       
+
+
+    </style>
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+</head>
+<body>
+    <h1>Data analysis</h1>
+    <h2>Part 1 Get Data...</h2>
+    <p>Data to string</p>
+    <p id="csv"></p>
+
+    <h2>Part 2 CSV to JSON</h2>
+    <p id="json"></p>
+
+    <h2>Part 3 JSON to HTML</h2>
+    <p>HTML table Object</p>
+    <div id="container"></div>
+    <h2>Part 4 Plot DATA</h2>
+    <p>Plot .....</p>
+    <div id="myPlot" style="width:650px;height:500px"></div>
+
+
+
+   
+   
+   
+    <script src="main.js"></script>
+</body>
+</html>

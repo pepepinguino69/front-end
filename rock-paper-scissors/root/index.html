@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock,Paper&Scissors</title>
+
+    <style>
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+ 
+}
+
+    
+    button{width:100px;height:100px;border-radius: 15px};
+    .rock{background-image: url("img/rock.png");}
+    .paper{background-image: url("img/paper.png");}
+    .scissors{background-image: url("img/scissors.png");}
+    .center{height: 100vh;}
+    .flex{display:flex;justify-content: space-around;align-items: center;height: 100%;}
+    .buttonflex{display:flex;justify-content: space-around;align-items: center;}
+    img{width:100px;}
+    .container{height:100%;width: 90%;}
+    .hide{visibility: hidden;}
+    .display{visibility: visible;}
+    .column{flex-direction: column;max-width: 375px;}
+    .newGame{width:300px;height:100px;background-color: purple;color: beige;font-size: large;}
+    .disabled{pointer-events: none;}
+    body{margin:0 auto};
+    button:hover{background:red}
+    
+    
+    
+
+    
+    
+    </style>
+</head>
+<body>
+  <div class="buttonflex">
+    <div class="flex column">
+      <button id="newGame" class="newGame hide" onclick="jugarNuevamente()">Jugar Nuevamente</button>
+      <h2>El Humano</h2>
+    <div class="flex">
+        <button id="3" class="buttonflex" onclick="jugar(0)"><img src="img/rock.png" alt=""></button>
+        <button id="4" class="buttonflex" onclick="jugar(1)"><img src="img/paper.png" alt=""></button>        
+        <button id="5" class="buttonflex" onclick="jugar(2)"><img src="img/scissors.png" alt=""></button>
+    </div>
+    <h2 class="buttonflex1">LA COMPU</h2>
+<div class="flex">
+  
+<div class="buttonflex hide" id="0"><img src="img/rock.png" alt=""></div>
+<div class="buttonflex hide" id="1"><img src="img/paper.png" alt=""></div>   
+<div class="buttonflex hide" id="2"><img src="img/scissors.png" alt=""></div>
+
+</div>
+<h1 id="resultado"></h1>  
+</div>
+
+    
+        
+        
+
+
+</div>
+</div>
+ 
+
+
+
+    
+<script src="piedra.js"></script>    
+</body>
+</html>
