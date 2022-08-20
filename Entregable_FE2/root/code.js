@@ -74,7 +74,7 @@ function recorrerListadoYRenderizarTarjetas() {
   document.getElementById("obtener-materias").removeEventListener("click", recorrerListadoYRenderizarTarjetas)
   listado.forEach(element => {
     let nuevoDiv=document.createElement("div");
-    nuevoDiv.setAttribute('class','box')
+    nuevoDiv.setAttribute('class','caja')
     nuevop1=document.createElement('p');
     nuevop1.setAttribute('id','p1')
     nuevop1.setAttribute('class','lenguajes')
@@ -82,7 +82,7 @@ function recorrerListadoYRenderizarTarjetas() {
     nuevop2.setAttribute('id','p2')
     nuevop2.setAttribute('class','bimestre')
     nuevaimg=document.createElement('img')
-    nuevaimg.setAttribute('height','100px')
+    //nuevaimg.setAttribute('height','100px')
     nuevaimg.setAttribute('src',element.imgUrl)
     nuevaimg.setAttribute('alt',element.lenguajes)
     nuevaimg.setAttribute('title',element.lenguajes)
