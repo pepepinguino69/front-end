@@ -1,8 +1,39 @@
 //comentario
 function onClick(){selectedCell = this.id;
+    if(selectedShip!='no-ship'){
     workflow=checkWithinBoard(this.id);
     if(workflow){
-    action=placeShip(selectedShip,selectedCell)}};
+    action=placeShip(selectedShip,selectedCell)}}
+    else{alert(selectedCell+"borrar barcos");
+       
+       
+       
+       
+       
+       
+       
+       
+
+
+
+
+
+            
+            
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+};
 function unselectShips(){
     for(i=0;i<shipPosition.length;i++){
         for(j=0;j<shipPosition[i].size;j++)
@@ -37,6 +68,7 @@ function placeShip(whatShip,gridLocation){
         if (verticalOrientation){increment=10}else{increment=1}
         if(increment+parseInt(gridLocation.substring(2))>9){auxZero=""}
         gridLocation='id'+auxZero+ (increment+parseInt(gridLocation.substring(2)))}
+        selectedShip='no-ship'
         let sendJson=true
     //for(r=0;r<5;r++){if(shipPosition[r].isPlaced==false){sendJson=false}}
     //if(sendJson){jSondata=
@@ -142,7 +174,7 @@ let shipContainer;
 let action;
 let selectedCell;
 let increment;
-let selectedShip;
+let selectedShip='no-ship';
 invalidPos=[]
 orientationButtonText="Press for Horizontal Positioning"
 orientationMsg="Ship will be positioned vertically"

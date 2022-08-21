@@ -66,7 +66,7 @@ datos=[
   {campo:"javascript",valor:datosPersona.interesPorJs}]
 
   datos.forEach((element,index) => {
-    document.getElementById(datos[i].campo).innerHTML+=datos[i].valor
+    document.getElementById(element.campo).innerHTML+=element.valor
     
   })
 }
