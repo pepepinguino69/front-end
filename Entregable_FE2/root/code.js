@@ -72,30 +72,26 @@ function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
   
   document.getElementById("obtener-materias").removeEventListener("click", recorrerListadoYRenderizarTarjetas)
+  let dinamico=[]
+  let elementos=[]
+  let nuevoCard
   listado.forEach((element,index) => {
-    let nuevoDiv=document.createElement("div");
-    nuevoDiv.setAttribute('class','caja')
-    nuevoDiv.setAttribute('id','caja-'+index)
-    nuevoP1=document.createElement('p');
-    nuevoP1.setAttribute('id','p1-'+index)
-    nuevoP1.setAttribute('class','lenguajes')
-    nuevoP2=document.createElement('p');
-    nuevoP2.setAttribute('id','p2-'+index)
-    nuevoP2.setAttribute('class','bimestre')
-    
-    nuevaImg=document.createElement('img')
-    nuevaImg.setAttribute('src',element.imgUrl)
-    nuevaImg.setAttribute('alt',element.lenguajes)
-
-    nuevoCard=document.getElementById('fila').appendChild(nuevoDiv)
-    nuevoUsop=nuevoCard.appendChild(nuevaImg)
-    nuevoUsop=nuevoCard.appendChild(nuevoP1).innerHTML=element.lenguajes
-    nuevoUsop=nuevoCard.appendChild(nuevoP2).innerHTML=element.bimestre
-  });
-
-
-}
-
+    for (i=0;i<4;i++){
+  elementos=[
+    {elem:'div',atr1:'class',val1:'caja',atr2:'id',val2:'div'+index,c1:''},
+    {elem:'img',atr1:'src',val1:element.imgUrl,atr2:'alt',val2:element.lenguajes,c1:''},
+    {elem:'p',atr1:'id',val1:'p1-'+index,atr2:'class',val2:'lenguajes',c1:element.lenguajes},
+    {elem:'p',atr1:'id',val1:'p2-'+index,atr2:'class',val2:'bimestre',c1:element.bimestre}]
+        dinamico[i]=document.createElement(elementos[i].elem);
+        dinamico[i].setAttribute(elementos[i].atr1,elementos[i].val1)
+        dinamico[i].setAttribute(elementos[i].atr2,elementos[i].val2)
+        if (i==0){
+      nuevoCard=document.getElementById('fila').appendChild(dinamico[i])}
+        else
+          {nuevoUso=nuevoCard.appendChild(dinamico[i]).innerHTML=elementos[i].c1}
+        }
+      })
+    }
 function alternarColorTema() {
   /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
  
