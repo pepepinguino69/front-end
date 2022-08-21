@@ -50,7 +50,7 @@ function obtenerDatosDelUsuario() {
   datosPersona.edad=2022-parseInt(anoNacimiento)
   datosPersona.ciudad=prompt('Ingrse su ciudad')
   datosPersona.interesPorJs= "No"
-  if(confirm("Le interesa el JS (OK en caso afirmativo)")){datosPersona.interesPorJs="Si"}}
+  if(confirm("Le interesa el JS")){datosPersona.interesPorJs="Si"}}
 
 
 
@@ -59,12 +59,16 @@ function renderizarDatosUsuario() {
   /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
   obtenerDatosDelUsuario();
   /* --------------- PUNTO 2: Escribe tu codigo a partir de aqui --------------- */
-document.getElementById("nombre").innerHTML+=datosPersona.nombre
-document.getElementById("edad").innerHTML+=(datosPersona.edad)
-document.getElementById("ciudad").innerHTML+=(datosPersona.ciudad)
-document.getElementById("javascript").innerHTML+=(datosPersona.interesPorJs)
+datos=[
+  {campo:"nombre",valor:datosPersona.nombre},
+  {campo:"edad",valor:datosPersona.edad},
+  {campo:"ciudad",valor:datosPersona.ciudad},
+  {campo:"javascript",valor:datosPersona.interesPorJs}]
 
-
+  datos.forEach((element,index) => {
+    document.getElementById(datos[i].campo).innerHTML+=datos[i].valor
+    
+  })
 }
 
 
@@ -102,7 +106,7 @@ function alternarColorTema() {
 
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
 
-let disableK=true;
+let disableF=true;
 document.addEventListener('keydown', function(event) {
-  if (event.code == 'KeyF'){if(disableK){document.getElementById('sobre-mi').classList.remove('oculto');disableK=false;
+  if (event.code == 'KeyF'){if(disableF){document.getElementById('sobre-mi').classList.remove('oculto');disableF=false;
   }}})
