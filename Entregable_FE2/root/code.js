@@ -44,16 +44,16 @@ cambiarTema.addEventListener("click", alternarColorTema);
 
 function obtenerDatosDelUsuario() {
   /* --------------- PUNTO 1: Escribe tu codigo a partir de aqui --------------- */
+  
+  
+  
   datosPersona.nombre=prompt('ingrese su nombre');
   let anoNacimiento;
-  do {anoNacimiento=prompt('Ingrse su ano de nacimiento (aaaa) mayor a 1922')}while (isNaN(parseInt(anoNacimiento))||parseInt(anoNacimiento)<1922)
+  do {anoNacimiento=prompt('Ingrese su ano de nacimiento (aaaa) mayor a 1922')}while (isNaN(parseInt(anoNacimiento))||parseInt(anoNacimiento)<1922)
   datosPersona.edad=2022-parseInt(anoNacimiento)
   datosPersona.ciudad=prompt('Ingrse su ciudad')
   datosPersona.interesPorJs= "No"
   if(confirm("Le interesa el JS")){datosPersona.interesPorJs="Si"}}
-
-
-
 
 function renderizarDatosUsuario() {
   /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
