@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 /* --------------------------- NO TOCAR DESDE ACÁ --------------------------- */
 let datosPersona = {
   nombre: "",
@@ -67,10 +59,8 @@ datos=[
 
   datos.forEach((element,index) => {
     document.getElementById(element.campo).innerHTML+=element.valor
-    
   })
 }
-
 
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
@@ -100,10 +90,7 @@ function alternarColorTema() {
   /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
  
   document.getElementById('sitio').classList.toggle('dark')
-
-
 }
-
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
 
 let disableF=true;
