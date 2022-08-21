@@ -72,24 +72,25 @@ function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
   
   document.getElementById("obtener-materias").removeEventListener("click", recorrerListadoYRenderizarTarjetas)
-  listado.forEach(element => {
+  listado.forEach((element,index) => {
     let nuevoDiv=document.createElement("div");
     nuevoDiv.setAttribute('class','caja')
-    nuevop1=document.createElement('p');
-    nuevop1.setAttribute('id','p1')
-    nuevop1.setAttribute('class','lenguajes')
-    nuevop2=document.createElement('p');
-    nuevop2.setAttribute('id','p2')
-    nuevop2.setAttribute('class','bimestre')
-    nuevaimg=document.createElement('img')
-    //nuevaimg.setAttribute('height','100px')
-    nuevaimg.setAttribute('src',element.imgUrl)
-    nuevaimg.setAttribute('alt',element.lenguajes)
-    nuevaimg.setAttribute('title',element.lenguajes)
-    nuevoUso=document.getElementById('fila').appendChild(nuevoDiv)
-    nuevoUsop2=nuevoUso.appendChild(nuevaimg).src=element.imgUrl
-    nuevoUsop1=nuevoUso.appendChild(nuevop1).innerHTML=element.lenguajes
-    nuevoUsop1=nuevoUso.appendChild(nuevop2).innerHTML=element.bimestre
+    nuevoDiv.setAttribute('id','caja-'+index)
+    nuevoP1=document.createElement('p');
+    nuevoP1.setAttribute('id','p1-'+index)
+    nuevoP1.setAttribute('class','lenguajes')
+    nuevoP2=document.createElement('p');
+    nuevoP2.setAttribute('id','p2-'+index)
+    nuevoP2.setAttribute('class','bimestre')
+    
+    nuevaImg=document.createElement('img')
+    nuevaImg.setAttribute('src',element.imgUrl)
+    nuevaImg.setAttribute('alt',element.lenguajes)
+
+    nuevoCard=document.getElementById('fila').appendChild(nuevoDiv)
+    nuevoUsop=nuevoCard.appendChild(nuevaImg)
+    nuevoUsop=nuevoCard.appendChild(nuevoP1).innerHTML=element.lenguajes
+    nuevoUsop=nuevoCard.appendChild(nuevoP2).innerHTML=element.bimestre
   });
 
 
