@@ -66,7 +66,6 @@ for (const item of datos)
 }
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
-  
   document.getElementById("obtener-materias").removeEventListener("click", recorrerListadoYRenderizarTarjetas)
   listado.forEach(element => {
   markup= `
@@ -84,6 +83,10 @@ function alternarColorTema() {
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
 let disableF=true;
 document.addEventListener('keydown', (event) =>{
-  if (event.code == 'KeyF'){if(disableF){document.getElementById('sobre-mi').classList.remove('oculto');
-  disableF=false;
-  }}})
+  if (event.code == 'KeyF')
+  {if(disableF)
+    {document.getElementById('sobre-mi').classList.remove('oculto');
+    disableF=false;
+    }
+  }
+})
