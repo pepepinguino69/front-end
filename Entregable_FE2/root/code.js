@@ -43,13 +43,14 @@ function obtenerDatosDelUsuario() {
     'Ingrese su ciudad',
     'Le interesa el JS'
   ]
+  
   let index=-1
   for (element of Object.keys(datosPersona)) {
     index++;
     if(index<3)
-      {element=prompt(prompts[index])}
+      {datosPersona[element]=prompt(prompts[index])}
     else
-      {element=confirm(prompts[index])}}
+      {datosPersona[element]=confirm(prompts[index])}}
     datosPersona.edad=2022-parseInt(datosPersona.edad);
     datosPersona.interesPorJs=datosPersona.interesPorJs?'Si':'No'}
 function renderizarDatosUsuario() {
@@ -65,12 +66,12 @@ for (const item of datos)
 }
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
-  let markup=[]
+  
   document.getElementById("obtener-materias").removeEventListener("click", recorrerListadoYRenderizarTarjetas)
   listado.forEach(element => {
   markup= `
   <div class="caja">
-     <img src=${element.imgUrl}>
+     <img src=${element.imgUrl} alt='imagen con el logo de '+ ${element.lenguajes}>
      <p class="lenguajes">${element.lenguajes}</p>
      <p class="bimestre">${element.bimestre}</p>
   </div>`
@@ -83,5 +84,6 @@ function alternarColorTema() {
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
 let disableF=true;
 document.addEventListener('keydown', (event) =>{
-  if (event.code == 'KeyF'){if(disableF){document.getElementById('sobre-mi').classList.remove('oculto');disableF=false;
+  if (event.code == 'KeyF'){if(disableF){document.getElementById('sobre-mi').classList.remove('oculto');
+  disableF=false;
   }}})
