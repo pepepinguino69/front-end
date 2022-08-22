@@ -71,7 +71,7 @@ function recorrerListadoYRenderizarTarjetas() {
   listado.forEach(element => {
   markup= `
   <div class="caja">
-     <img src=${element.imgUrl} alt='imagen con el logo de '+ ${element.lenguajes}>
+     <img src="${element.imgUrl}" alt='imagen con el logo de '+ "${element.lenguajes}">
      <p class="lenguajes">${element.lenguajes}</p>
      <p class="bimestre">${element.bimestre}</p>
   </div>`
