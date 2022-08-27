@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <input type="text" id="input" placeholder="Filter..."/>
+  <ul id="list">
+  <li>paris</li>
+  <li>berlin</li>
+  <li>new york</li>
+  <li>sao paulo</li>
+  <li>hong kong</li>
+  <li>vienna</li></ul>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+const input = document.getElementById('input');
+input.addEventListener('input', () => {
+  // type in your code here
+list=document.querySelectorAll('#list li')
+filter=document.querySelector('#input').value
+list.forEach(e=>{if (e.textContent.substring(0,filter.length)!=filter)
+    {ehidden=true}else{e.style.hidden=false}})
+
+filter=document.querySelector('#input').value
+filteredList=list.filter(e=>e.textContent.substring(0,filter.length)==filter)
+});
+
+
+</script>
+
+
+</body>
+</html>
