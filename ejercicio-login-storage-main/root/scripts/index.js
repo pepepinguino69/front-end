@@ -69,8 +69,8 @@ TIPS:
    btnSubmit=document.querySelector('.login-btn').addEventListener('click',(e)=>{
     cumplirCondiciones(e)})
    btncloseSession=document.querySelector('.btn-closeSession').addEventListener('click',(e)=>{
-     eraseLocalStorage(e)})
-   user =localStorage.getItem("user");
+     erasesessionStorage(e)})
+   user =sessionStorage.getItem("user");
    if(user!=null&&pass!=null){
     document.querySelector('#email-input').value=user
     document.querySelector('#password-input').value=pass
@@ -78,8 +78,8 @@ TIPS:
     
    }
 
-      function eraseLocalStorage(e){
-        localStorage.clear();
+      function erasesessionStorage(e){
+        sessionStorage.clear();
       location.reload()}
    
    function validarEmail(str){
@@ -100,7 +100,7 @@ TIPS:
    function newSession(u,p){
      for(i=0;i<4;i++){setTimeout(contarSegundos(i),1000)}
      errores.length=0
-     localStorage.setItem("user",u);
+     sessionStorage.setItem("user",u);
      formScreen=document.querySelector('form').classList.add('hidden')
      sessionLoading=document.querySelector('#loader').classList.remove('hidden')
      welcomeScreen=document.querySelector('h1').innerHTML='<h1> Bienvenido al sitio 😘 </h1>'
