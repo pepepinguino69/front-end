@@ -1,6 +1,5 @@
- 
-
 /*To Do*/
+
 if(localStorage.getItem('comentariosGuardados2')==undefined)
 {comentariosArr=[]}
 else{
@@ -8,6 +7,7 @@ comentariosArr=JSON.parse(localStorage.getItem('comentariosGuardados2'))
 mostrarComentariosGuardados()}
 construirBotonera()
 capturarComentarios()
+
 function construirBotonera(){
     newDivPosition=document.querySelector('.contenedor')
     newDiv=document.createElement('div')
@@ -27,7 +27,6 @@ function construirBotonera(){
         newButton.innerText=buttonPanel[index].label
         newButtonPosition.appendChild(newButton)})
     document.querySelector('#borrar').addEventListener('click',(e)=>{localStorage.clear();location.reload()})
-    document.querySelector('#selectFiles').addEventListener('click',(e)=>selectFile())     
     document.querySelector('#selectFiles').addEventListener('click',(e)=>selectFile())   
     document.querySelector('#comentar').addEventListener('click', (e)=>{capturarComentarios(e)})
 }
@@ -84,9 +83,8 @@ function tachado(event){
         document.querySelector('#'+idClicked).classList.toggle('colorFondo')}
     else
         {document.querySelector('#cr'+arrPos).classList.toggle('estadoCruzado')}
-        {document.querySelector('#cr'+arrPos).classList.toggle('estadoCruzado')}
 }
-
+    
 function displayCosas(elemento){
     pCount = document.querySelectorAll('p').length
     nuevoP=document.createElement('p')
@@ -101,26 +99,20 @@ function displayCosas(elemento){
         idImg='im'+pCount
         nuevoP.innerHTML=`<img id="${idImg}" height="150px" src="${imageString}"/>`
         idCross="cr"+pCount
-        nuevoP.innerHTML+=`<img id="${idCross}" class="cross-img estadoCruzado" src="http://www.clker.com/cliparts/0/7/e/a/12074327311562940906milker_X_icon.svg.med.png" />`
-
+        nuevoP.innerHTML+=`<img id="${idCross}" class="cross-img estadoCruzado" src="http://www.clker.com/cliparts/0/7/e/a/12074327311562940906milker_X_icon.svg.med.png" />`}
+                                   
         const divComentarios=document.querySelector('.comentarios')
-        
-        const porque=divComentarios.appendChild(nuevoP)}
-
+        const porque=divComentarios.appendChild(nuevoP)
 }
+    
 function capturarComentarios(event){
-
-function capturarComentarios(){
-    form=document.querySelector('#comentar')
-    form.addEventListener('click', (e)=>{
+    
     captura=document.querySelector('#comentario').value
     document.querySelector('#comentario').value=''
     if(captura.length>0){
         prueba={'comentario':limpiarTexto(captura)}
     comentariosArr.push(prueba)
     localStorage.setItem('comentariosGuardados2',JSON.stringify(comentariosArr))
-    displayCosas(comentariosArr[comentariosArr.length-1])}})
-
     displayCosas(comentariosArr[comentariosArr.length-1])}}
 
 function limpiarTexto(elemento){
@@ -137,4 +129,15 @@ function normalDate(date){
     dd=twoDigits(date.getDate());
     hr=twoDigits(date.getHours());
     mts =twoDigits(date.getMinutes());
-    return dd+'/'+mm+'/'+yr+' - '+hr+':'+mts}
+    return dd+'/'+mm+'/'+yr+' - '+hr+':'+mts
+}
+
+
+
+
+
+
+
+
+
+
